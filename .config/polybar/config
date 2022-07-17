@@ -29,6 +29,8 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
+enable-ipc = true
+
 line-size = 3
 line-color = #f00
 
@@ -49,7 +51,7 @@ font-3 = "NotoSansDisplay Nerd Font Mono:size=9;2"
 
 modules-left = i3 
 modules-center = songinfo prev pauseplay next date class_now
-modules-right = wlan pulseaudioicon pulseaudio battery 
+modules-right = redshift pulseaudioicon pulseaudio wlan battery 
 
 tray-position = right
 tray-maxsize = 16
@@ -95,6 +97,26 @@ label-urgent-padding = 2
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+
+[module/redshift]
+type = custom/menu
+
+label-open = %{A1:redshift -P -O 4000k; polybar-msg action "#redshift.open.0":}%{A}
+label-close =
+label-open-padding = 2
+label-open-background = #A3BE8C
+label-open-foreground = ${colors.background}
+
+menu-0-0 = %{A1:redshift -P -O 3200k; polybar-msg action "#redshift.open.1":}%{A}
+menu-0-0-padding = 2
+menu-0-0-background = #EBCB8B
+menu-0-0-foreground= ${colors.background}
+
+menu-1-0 = %{A1:redshift -x; polybar-msg action "#redshift.close":}%{A}
+menu-1-0-padding = 2
+menu-1-0-background = #D08770
+menu-1-0-foreground= ${colors.background}
+
 
 [module/wlan]
 type = internal/network
