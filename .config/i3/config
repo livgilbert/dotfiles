@@ -187,14 +187,8 @@ bindsym $mod+Shift+e exec rofi -show power-menu -modi power-menu:"$HOME/.local/b
 
 ##### STARTUP PROGRAMS
 
-# set wallpaper and start picom (sleep fixes graphical issues that sometimes happen due to a race condition between picom and nitrogen)
-exec_always --no-startup-id nitrogen --restore; sleep 0.5; picom --experimental-backends
-
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# load autorandr
-exec --no-startup-id autorandr -c
 
 # apply dark theme to system
 exec --no-startup-id /usr/lib/gsd-xsettings
@@ -213,4 +207,7 @@ exec --no-startup-id dunst
 # autoreload i3 when display config changes
 exec --no-startup-id python3 $HOME/.config/i3/screen_change.py
 
-##### END
+## start, autorandr, set wallpaper and start picom (this has to happen in a particular order)
+exec_always --no-startup-id autorandr -c; sleep 0.5; nitrogen --restore; sleep 0.5; picom --experimental-backends
+
+#### END

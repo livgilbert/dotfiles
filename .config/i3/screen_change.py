@@ -32,7 +32,7 @@ while True:
     # second count
     xr2 = count_screens(get(["xrandr"]))
     # check if there is a change in the screen state
-    if xr2 != xr1:
+    if xr2 != xr1 and xr1 is not None:
         run_command('sh ~/.config/i3/reload.sh')
     # set the second count as initial state for the next loop
     xr1 = xr2
