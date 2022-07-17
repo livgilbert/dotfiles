@@ -1,5 +1,7 @@
 # dotfiles
 
+![screenshot of desktop with terminals](../blob/main/screenshots/1.png?raw=true)
+
 Nothing too crazy but might as well put them out there.
 
 Starring: 
