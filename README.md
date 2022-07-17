@@ -1,6 +1,6 @@
 # dotfiles
 
-![screenshot of desktop with terminals](../blob/main/screenshots/1.png?raw=true)
+![screenshot of desktop with terminals](https://raw.githubusercontent.com/livgilbert/dotfiles/main/screenshots/1.png)
 
 Nothing too crazy but might as well put them out there.
 
