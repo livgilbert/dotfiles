@@ -1,0 +1,94 @@
+/**
+ * Nordic rofi theme
+ * Adapted by undiabler <undiabler@gmail.com>
+ *
+ * Nord Color palette imported from https://www.nordtheme.com/
+ *
+ */
+
+configuration {
+  location: 3;
+
+	font: "Noto Sans 14";
+	line-margin: 10;
+	lines: 6;
+	columns: 1;
+}
+
+* {
+	nord0: rgba(46,52,64,1);
+	nord1: #3b4252;
+	nord2: #434c5e;
+	nord3: #4c566a;
+
+	nord4: #d8dee9;
+	nord5: #e5e9f0;
+	nord6: #eceff4;
+
+	nord7: #8fbcbb;
+	nord8: #88c0d0;
+	nord9: #81a1c1;
+	nord10: #5e81ac;
+	nord11: #bf616a;
+
+	nord12: #d08770;
+	nord13: #ebcb8b;
+	nord14: #a3be8c;
+	nord15: #b48ead;
+
+  foreground:  @nord9;
+  background-color:  #3b425260;
+    
+  highlight:     underline bold #eceff4;
+
+  transparent: rgba(255,255,255,0);
+}
+
+window {
+  transparency: "real";
+  padding: 0px;
+  border:  0px;
+
+  spacing: 0;
+  children:  [mainbox];
+  orientation: horizontal;
+  width: 220;
+  height: 350;
+
+  y-offset: 48;
+  x-offset: -24;
+}
+
+mainbox {
+    spacing: 0;
+    children: [ listview ];
+}
+
+listview {
+    padding: 24px;
+    border-color: @nord10;
+    border: 1px 1px 1px 1px;
+    spacing: 24px;
+}
+
+element {
+    padding: 16px 32px;
+    vertical-align: 0.5;
+    border-radius: 4px;
+    border-color: #88C0D0;
+    border: 1px;
+    background-color: transparent;
+    color: @foreground;
+    text-color: rgb(216, 222, 233);
+}
+
+element.selected.normal {
+	  background-color: @nord8;
+	  text-color: #2e3440;
+}
+
+element-text, element-icon {
+    background-color: transparent;
+    text-color:       inherit;
+}
+
