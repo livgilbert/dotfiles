@@ -163,6 +163,7 @@ bindsym $mod+z exec $HOME/.config/i3/quiet-cmd.py toggle
 
 # screenshot
 bindsym --release Print exec import png:- | xclip -selection c -t image/png
+bindsym --release $mod+Print exec import $HOME/Pictures/Screenshot-$(date +"%Y%m%d-%H%M%S").png
 
 # audio 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -208,6 +209,6 @@ exec --no-startup-id dunst
 exec --no-startup-id python3 $HOME/.config/i3/screen_change.py
 
 ## start, autorandr, set wallpaper and start picom (this has to happen in a particular order)
-exec_always --no-startup-id autorandr -c; sleep 0.5; nitrogen --restore; sleep 0.5; picom --experimental-backends
+exec_always --no-startup-id autorandr -c && sleep 0.5 && nitrogen --restore && sleep 0.5 && picom --experimental-backends
 
 #### END
